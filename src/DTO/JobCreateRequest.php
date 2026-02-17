@@ -1,0 +1,16 @@
+<?php
+
+namespace App\DTO;
+
+use Symfony\Component\Validator\Constraints as Assert;
+
+class JobCreateRequest
+{
+    #[Assert\NotBlank]
+    #[Assert\Length(max: 255)]
+    public ?string $title = null;
+
+    #[Assert\NotBlank]
+    #[Assert\Length(max: 1000)]
+    public ?string $description = null;
+}
